@@ -1,0 +1,26 @@
+<h2>Employee Pair Work Tracker</h2>
+
+<input type="file" (change)="onFileSelected($event)" accept=".csv" />
+
+@if (results.length) {
+<table>
+  <thead>
+    <tr>
+      <th>Employee ID #1</th>
+      <th>Employee ID #2</th>
+      <th>Project ID</th>
+      <th>Days Worked</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (row of results; track $index) {
+    <tr>
+      <td>{{ row.empId1 }}</td>
+      <td>{{ row.empId2 }}</td>
+      <td>{{ row.projectId }}</td>
+      <td>{{ row.daysWorked }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+}
